@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.constructing_view_layouts.RelativeLayoutActivity">
+
+    <TextView
+        android:id="@+id/textViewHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/relative_layout_label" />
+
+    <TextView
+        android:id="@+id/textViewFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewHeadline"
+        android:text="@string/item_1" />
+
+    <TextView
+        android:id="@+id/textViewSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewHeadline"
+        android:layout_centerHorizontal="true"
+        android:text="@string/item_2" />
+
+    <TextView
+        android:id="@+id/textViewThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewHeadline"
+        android:layout_alignParentEnd="true"
+        android:text="@string/item_3" />
+
+    <TextView
+        android:id="@+id/textViewFourth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewThird"
+        android:layout_alignParentEnd="true"
+        android:text="@string/item_4" />
+
+    <Button
+        android:id="@+id/buttonNextLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewFourth"
+        android:layout_centerHorizontal="true"
+        android:text="@string/next_layout_label" />
+
+</RelativeLayout>

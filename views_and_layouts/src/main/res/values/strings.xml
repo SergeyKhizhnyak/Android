@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Views and layouts</string>
+    <string name="next_layout_label">Next layout</string>
+    <string name="item_1">First item</string>
+    <string name="item_2">Second item</string>
+    <string name="item_3">Third item</string>
+    <string name="item_4">Fourth item</string>
+    <string name="linear_layout_label">Linear layout</string>
+    <string name="relative_layout_label">Relative layout</string>
+    <string name="constraint_layout_label">Constraint layout</string>
+
+</resources>

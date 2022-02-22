@@ -5,6 +5,11 @@
       <map>
         <entry key="..\:/JavaAndroid/app/src/main/res/layout-land/activity_main.xml" value="0.1728395061728395" />
         <entry key="..\:/JavaAndroid/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/JavaAndroid/permisions/src/main/res/layout/activity_permissions.xml" value="0.17074275362318841" />
+        <entry key="..\:/JavaAndroid/views_and_layouts/src/main/res/layout/activity_constraint_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/JavaAndroid/views_and_layouts/src/main/res/layout/activity_frame_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/JavaAndroid/views_and_layouts/src/main/res/layout/activity_linear_layot.xml" value="0.25" />
+        <entry key="..\:/JavaAndroid/views_and_layouts/src/main/res/layout/activity_relative_layout.xml" value="0.17074275362318841" />
       </map>
     </option>
   </component>
