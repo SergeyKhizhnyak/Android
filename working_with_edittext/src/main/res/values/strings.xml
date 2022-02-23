@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Working with EditText</string>
+    <string name="headline">Work with EditText </string>
+    <string name="phone_number">Phone number</string>
+    <string name="read_phone_number">Read phone number</string>
+    
+</resources>

@@ -16,3 +16,4 @@ rootProject.name = "Android"
 include ':app'
 include ':views_and_layouts'
 include ':work_with_textview'
+include ':working_with_edittext'

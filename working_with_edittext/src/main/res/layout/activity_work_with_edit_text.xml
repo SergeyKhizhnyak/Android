@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WorkWithEditTextActivity">
+
+    <TextView
+        android:id="@+id/textViewHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/headline" />
+
+    <EditText
+        android:id="@+id/editTextContactPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="phone"
+        android:drawableStart="@drawable/contact_phone"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:maxLength="@integer/max_length" />
+
+    <Button
+        android:id="@+id/buttonReadPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/read_phone_number" />
+
+    <TextView
+        android:id="@+id/textViewContactPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone_number" />
+
+</LinearLayout>
