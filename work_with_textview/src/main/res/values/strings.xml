@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Work with TextView</string>
+    <string name="headline_label">Work with TextView</string>
+    <string name="text_in_monospace">This is "monospace"</string>
+    <string name="text_in_sans">This is "sans"</string>
+    <string name="text_is_bold">This is "bold"</string>
+    <string name="text_is_italic">This is italic</string>
+    <string name="text_is_12sp">This is "12sp"</string>
+    <string name="text_is_34sp">This is "34sp"</string>
+    <string name="long_text">This is long text that needs to be cut down to size in order to be
+        limited to fit </string>
+    <string name="light_teal_text">This is a light teal</string>
+    <string name="text_with_shadow">This is a text with shadow</string>
+    <string name="text_with_link">This is where you can listen to music
+        "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"</string>
+    <string name="text_with_image">This is a text with image</string>
+
+</resources>
