@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Work with ImageView</string>
+    <string name="headline">Work wit ImageView</string>
+    <string name="center_label">Center</string>
+    <string name="center_crop_label">Center crop</string>
+    <string name="center_inside_label">Center inside</string>
+    <string name="fit_center_label">Fit center</string>
+    <string name="fit_start_label">Fit start</string>
+    <string name="fit_end_label">Fit end</string>
+    <string name="fit_x_y_label">Fit xy</string>
+    <string name="matrix">Matrix</string>
+    <string name="description">Dio Brando image</string>
+
+</resources>
