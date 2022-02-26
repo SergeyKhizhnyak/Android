@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Work with InputViews</string>
+    <string name="item_one">First item</string>
+    <string name="item_two">Second item</string>
+    <string name="item_three">Third item</string>
+    <string name="item_four">Forth item</string>
+</resources>
