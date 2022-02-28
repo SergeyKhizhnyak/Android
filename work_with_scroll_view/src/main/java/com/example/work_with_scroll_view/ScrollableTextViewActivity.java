@@ -1,0 +1,18 @@
+package com.example.work_with_scroll_view;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.TextView;
+
+public class ScrollableTextViewActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_scrollable_text_view);
+        TextView description = findViewById(R.id.textViewDescription);
+        description.setMovementMethod(new ScrollingMovementMethod());
+    }
+}
