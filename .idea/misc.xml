@@ -3,8 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/work_with_image_view/src/main/res/layout/activity_work_with_image_view.xml" value="0.12396694214876033" />
+        <entry key="..\:/Android/work_with_inputviews/src/main/res/layout/activity_work_with_input_views.xml" value="0.23772609819121446" />
+        <entry key="..\:/Android/work_with_inputviews/src/main/res/layout/spinner_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/work_with_scroll_view/src/main/res/layout/activity_scrollable_text_view.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/work_with_scroll_view/src/main/res/layout/activity_work_with_scroll_view.xml" value="0.33" />
+        <entry key="..\:/Android/work_with_web_view/src/main/res/layout/activity_work_with_web_view.xml" value="0.358695652173913" />
         <entry key="..\:/JavaAndroid/app/src/main/res/layout-land/activity_main.xml" value="0.1728395061728395" />
         <entry key="..\:/JavaAndroid/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/JavaAndroid/permisions/src/main/res/layout/activity_permissions.xml" value="0.17074275362318841" />
+        <entry key="..\:/JavaAndroid/views_and_layouts/src/main/res/layout/activity_constraint_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/JavaAndroid/views_and_layouts/src/main/res/layout/activity_frame_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/JavaAndroid/views_and_layouts/src/main/res/layout/activity_linear_layot.xml" value="0.25" />
+        <entry key="..\:/JavaAndroid/views_and_layouts/src/main/res/layout/activity_relative_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/JavaAndroid/work_with_textview/src/main/res/layout/activity_work_with_text_view.xml" value="0.25" />
+        <entry key="..\:/JavaAndroid/working_with_edittext/src/main/res/layout/activity_work_with_edit_text.xml" value="0.17074275362318841" />
       </map>
     </option>
   </component>

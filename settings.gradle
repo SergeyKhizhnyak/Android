@@ -14,3 +14,10 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Android"
 include ':app'
+include ':views_and_layouts'
+include ':work_with_textview'
+include ':working_with_edittext'
+include ':work_with_image_view'
+include ':work_with_inputviews'
+include ':work_with_web_view'
+include ':work_with_scroll_view'

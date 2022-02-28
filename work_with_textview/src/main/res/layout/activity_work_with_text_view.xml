@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WorkWithTextViewActivity">
+
+    <TextView
+        android:id="@+id/textViewHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/headline_label" />
+
+
+    <TextView
+        android:id="@+id/textViewTypefaceMonospace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_in_monospace"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/textViewTypefaceSans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_in_sans"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/textViewTextStyleBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_is_bold"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewTextStyleItalic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_is_italic"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textViewTextSizeSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_is_12sp"
+        android:textSize="@dimen/text_small" />
+
+    <TextView
+        android:id="@+id/textViewTextSizeLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_is_34sp"
+        android:textSize="@dimen/text_large" />
+
+    <TextView
+        android:id="@+id/textViewTextTruncation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:text="@string/long_text" />
+
+    <TextView
+        android:id="@+id/textViewTextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/light_teal_text"
+        android:textColor="@color/teal_200" />
+
+    <TextView
+        android:id="@+id/textViewTextShadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/purple_500"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="@string/text_with_shadow" />
+
+    <TextView
+        android:id="@+id/textViewAutolinkURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="all"
+        android:linksClickable="true"
+        android:text="@string/text_with_link" />
+
+    <TextView
+        android:id="@+id/textViewTextWithImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/padding"
+        android:text="@string/text_with_image"
+        app:drawableLeftCompat="@drawable/coronavirus_image" />
+
+</LinearLayout>

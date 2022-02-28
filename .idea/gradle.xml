@@ -11,6 +11,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/views_and_layouts" />
+            <option value="$PROJECT_DIR$/work_with_image_view" />
+            <option value="$PROJECT_DIR$/work_with_inputviews" />
+            <option value="$PROJECT_DIR$/work_with_scroll_view" />
+            <option value="$PROJECT_DIR$/work_with_textview" />
+            <option value="$PROJECT_DIR$/work_with_web_view" />
+            <option value="$PROJECT_DIR$/working_with_edittext" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
