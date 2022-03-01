@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BasicEventListenersActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:layout_marginTop="@dimen/margin_middle"
+        android:longClickable="true"
+        android:onClick="sendMessageOnClick"
+        android:text="@string/text_view_label"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:layout_marginTop="@dimen/margin_middle"
+        android:onClick="sendMessageOnClick"
+        android:text="@string/button_label"
+        tools:ignore="UsingOnClickInXml" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:layout_marginTop="@dimen/margin_middle"
+        android:autofillHints="name"
+        android:imeOptions="actionDone"
+        android:hint="@string/edit_text_label"
+        android:inputType="textPersonName" />
+</LinearLayout>
