@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Displaying Toasts</string>
+    <string name="button_default_toast_label">Default toast</string>
+    <string name="button_toast_with_gravity_label">Toast with gravity</string>
+    <string name="button_custom_toast_label">Custom toast</string>
+    <string name="image_description">Description</string>
+</resources>
