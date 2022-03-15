@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Work With ActionBar</string>
+    <string name="change_title_label">Change title</string>
+    <string name="hide_title_label">Hide title</string>
+    <string name="get_title_label">Get title</string>
+    <string name="add_image_label">Add image</string>
+</resources>

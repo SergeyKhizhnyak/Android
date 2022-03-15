@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/arrowBack"
+        android:icon="@drawable/arrow_back"
+        app:showAsAction="always"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/arrowForward"
+        android:icon="@drawable/arrow_forward"
+        app:showAsAction="ifRoom"
+        tools:ignore="MenuTitle" />
+</menu>
