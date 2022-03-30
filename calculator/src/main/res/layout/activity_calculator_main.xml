@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".CalculatorMainActivity">
+
+    <Button
+        android:id="@+id/button_zero"
+        style="@style/NumberButton"
+        android:layout_width="@dimen/button_layout_width"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_border"
+        android:text="@string/button_label_zero"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_dot"
+        style="@style/NumberButton"
+        android:layout_width="@dimen/button_layout_width"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_border"
+        android:text="@string/button_label_dot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_zero" />
+
+    <Button
+        android:id="@+id/button_clear"
+        style="@style/NumberButton"
+        android:layout_width="@dimen/button_layout_width"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_border"
+        android:text="@string/button_label_clear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_dot" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
