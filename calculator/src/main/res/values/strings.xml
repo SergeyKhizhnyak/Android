@@ -20,4 +20,5 @@
     <string name="button_label_multiply">*</string>
     <string name="button_label_divide">/</string>
     <string name="button_label_equals">=</string>
+    <string name="result_field_hint">=0</string>
 </resources>

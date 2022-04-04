@@ -12,12 +12,14 @@
     <TextView
         android:id="@+id/text_view_calculation_field"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="@string/button_label_zero" />
 
     <TextView
         android:id="@+id/text_view_result_field"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="@string/result_field_hint" />
 
     <LinearLayout
         android:layout_width="match_parent"
