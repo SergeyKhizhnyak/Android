@@ -11,5 +11,13 @@
     <string name="button_label_eight">8</string>
     <string name="button_label_nine">9</string>
     <string name="button_label_dot">.</string>
-    <string name="button_label_clear">C</string>
+    <string name="button_label_clear_state1">AC</string>
+    <string name="button_label_clear_state2">C</string>
+    <string name="button_label_delete">X</string>
+    <string name="button_label_percent">%</string>
+    <string name="button_label_plus">+</string>
+    <string name="button_label_minus">-</string>
+    <string name="button_label_multiply">*</string>
+    <string name="button_label_divide">/</string>
+    <string name="button_label_equals">=</string>
 </resources>
