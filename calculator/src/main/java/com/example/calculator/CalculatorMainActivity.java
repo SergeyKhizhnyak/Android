@@ -1,15 +1,17 @@
 package com.example.calculator;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CalculatorMainActivity extends AppCompatActivity {
+    Calculator calculator = new CalculatorImpl();
+    TextView calculationStoryField;
     TextView calculationField;
     TextView resultField;
-    TextView calculationStoryField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,8 @@ public class CalculatorMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calculator_main);
         calculationField = findViewById(R.id.text_view_calculation_field);
         resultField = findViewById(R.id.text_view_result_field);
+        calculationStoryField = findViewById(R.id.text_view_calculation_story_field);
+        calculationStoryField.setMovementMethod(new ScrollingMovementMethod());
 
         Button btnOne = findViewById(R.id.button_one);
         Button btnTwo = findViewById(R.id.button_two);
@@ -28,10 +32,15 @@ public class CalculatorMainActivity extends AppCompatActivity {
         Button btnEight = findViewById(R.id.button_eight);
         Button btnNine = findViewById(R.id.button_nine);
         Button btnZero = findViewById(R.id.button_zero);
+        Button btnDot = findViewById(R.id.button_dot);
         Button btnClear = findViewById(R.id.button_clear);
         Button btnDelete = findViewById(R.id.button_delete);
-        Button btnPlus = findViewById(R.id.button_plus);
-        Button btnMinus = findViewById(R.id.button_minus);
+        Button btnAddition = findViewById(R.id.button_addition);
+        Button btnSubtraction = findViewById(R.id.button_subtraction);
+        Button btnMultiplication = findViewById(R.id.button_multiplication);
+        Button btnDivision = findViewById(R.id.button_division);
+        Button btnPercent = findViewById(R.id.button_percent);
+        Button btnEquals = findViewById(R.id.button_equals);
 
         String btnNameOne = getResources().getString(R.string.button_label_one);
         String btnNameTwo = getResources().getString(R.string.button_label_two);
@@ -43,77 +52,119 @@ public class CalculatorMainActivity extends AppCompatActivity {
         String btnNameEight = getResources().getString(R.string.button_label_eight);
         String btnNameNine = getResources().getString(R.string.button_label_nine);
         String btnNameZero = getResources().getString(R.string.button_label_zero);
-        String btnNamePlus = getResources().getString(R.string.button_label_plus);
-        String btnNameMinus = getResources().getString(R.string.button_label_minus);
+        String btnNameDot = getResources().getString(R.string.button_label_dot);
+        String btnNameAddition = getResources().getString(R.string.button_label_addition);
+        String btnNameSubtraction = getResources().getString(R.string.button_label_subtraction);
+        String btnNameMultiplication = getResources().getString(R.string.button_label_multiplication);
+        String btnNameDivision = getResources().getString(R.string.button_label_division);
 
-        onNumberButtonClick(btnOne, btnNameOne);
-        onNumberButtonClick(btnTwo, btnNameTwo);
-        onNumberButtonClick(btnThree, btnNameThree);
-        onNumberButtonClick(btnFour, btnNameFour);
-        onNumberButtonClick(btnFive, btnNameFive);
-        onNumberButtonClick(btnSix, btnNameSix);
-        onNumberButtonClick(btnSeven, btnNameSeven);
-        onNumberButtonClick(btnEight, btnNameEight);
-        onNumberButtonClick(btnNine, btnNameNine);
-        onNumberButtonClick(btnZero, btnNameZero);
-        onArithmeticButtonClick(btnPlus, btnNamePlus);
-        onArithmeticButtonClick(btnMinus, btnNameMinus);
-
-        btnClear.setOnClickListener(view -> clearButton());
-        btnDelete.setOnClickListener(view -> deleteButton());
+        setOnOperandOrOperationButtonClick(btnOne, btnNameOne);
+        setOnOperandOrOperationButtonClick(btnTwo, btnNameTwo);
+        setOnOperandOrOperationButtonClick(btnThree, btnNameThree);
+        setOnOperandOrOperationButtonClick(btnFour, btnNameFour);
+        setOnOperandOrOperationButtonClick(btnFive, btnNameFive);
+        setOnOperandOrOperationButtonClick(btnSix, btnNameSix);
+        setOnOperandOrOperationButtonClick(btnSeven, btnNameSeven);
+        setOnOperandOrOperationButtonClick(btnEight, btnNameEight);
+        setOnOperandOrOperationButtonClick(btnNine, btnNameNine);
+        setOnOperandOrOperationButtonClick(btnZero, btnNameZero);
+        setOnOperandOrOperationButtonClick(btnDot, btnNameDot);
+        setOnOperandOrOperationButtonClick(btnAddition, btnNameAddition);
+        setOnOperandOrOperationButtonClick(btnSubtraction, btnNameSubtraction);
+        setOnOperandOrOperationButtonClick(btnMultiplication, btnNameMultiplication);
+        setOnOperandOrOperationButtonClick(btnDivision, btnNameDivision);
+        setOnDeleteButtonClick(btnDelete);
+        setOnClearButtonClick(btnClear);
+        setOnPercentButtonClick(btnPercent);
+        setOnEqualsButtonClick(btnEquals);
+        float textSize = btnOne.getTextSize();
+        calculationField.setTextSize(textSize);
+        resultField.setTextSize(textSize);
     }
 
-    private void onNumberButtonClick(Button btn, String btnName) {
+    private void setOnDeleteButtonClick(Button btn) {
         btn.setOnClickListener(view -> {
             String calculation = calculationField.getText().toString();
-            if (calculation.isEmpty() && btnName.equals("0")) {
+            calculation = calculator.deleteButton(calculation);
+            calculationField.setText(calculation);
+            resultField.setText(calculateResult(calculation));
+        });
+    }
+
+    private void setOnClearButtonClick(Button btn) {
+        btn.setOnClickListener(view -> {
+            String calculation = calculator.clearButton();
+            calculationField.setText(calculation);
+            resultField.setText(calculation);
+        });
+    }
+
+    private void setOnOperandOrOperationButtonClick(Button btn, String btnName) {
+        btn.setOnClickListener(view -> {
+            String calculation = calculationField.getText().toString();
+            calculation = calculator.operandOrOperationButton(btnName, calculation);
+            calculationField.setText(calculation);
+            resultField.setText(calculateResult(calculation));
+        });
+    }
+
+    private void setOnPercentButtonClick(Button btn) {
+        btn.setOnClickListener(view -> {
+            String calculation = calculationField.getText().toString();
+
+            if (calculation.isEmpty()) {
                 return;
             }
 
-            calculation = calculation.concat(btnName);
+            calculation = calculationQualifier(calculation);
+            calculation = calculator.percentButton(calculation);
             calculationField.setText(calculation);
-            resultField.setText("=" + calculation);
+            resultField.setText(calculateResult(calculation));
         });
     }
 
-    private void onArithmeticButtonClick(Button btn, String btnName) {
+    private void setOnEqualsButtonClick(Button btn) {
         btn.setOnClickListener(view -> {
-            String calculation = calculationField.getText().toString();
-            if (calculation.isEmpty()) {
-                if (btnName.equals("+")) {
-                    calculationField.setHint("0+");
-                    return;
-                }
-
-                if (btnName.equals("-")) {
-                    calculationField.setHint("0-");
-                    return;
-                }
-            }
-
-            char lastElement = calculation.charAt(calculation.length() -1);
-            switch (lastElement) {
-                case ('+'):
-
-            }
-            calculation = calculation.concat(btnName);
-            calculationField.setText(calculation);
+            String str = calculationField.getText().toString();
+            str = calculationQualifier(str);
+            calculationStoryField.append(str + "\n");
+            str = resultField.getText().toString();
+            calculationField.setText(str);
         });
     }
 
-    private void clearButton() {
-        calculationField.setText("");
-        resultField.setText("");
+
+    private String calculateResult(String expression) {
+        expression = calculationQualifier(expression);
+        String result = calculator.equalsButton(expression);
+        return resultQualifier(result);
     }
 
-    private void deleteButton() {
-        String calculation = calculationField.getText().toString();
-        if (calculation.length() == 0) {
-            return;
+
+    private String calculationQualifier(String str) {
+        char lastElement = str.charAt(str.length() - 1);
+
+        if (!Character.isDigit(lastElement)) {
+            str = calculator.deleteButton(str);
         }
 
-        calculation = calculation.substring(0, calculation.length() - 1);
-        calculationField.setText(calculation);
-        resultField.setText("=" + calculation);
+        return str;
+    }
+
+    private String resultQualifier(String str) {
+        Double value;
+
+        try {
+            value = Double.parseDouble(str);
+        } catch (NumberFormatException exception) {
+            return str;
+        }
+
+        if (value == Math.floor(value) && !Double.isInfinite(value)) {
+            int result = value.intValue();
+            return String.valueOf(result);
+        }
+
+        return String.valueOf(value);
     }
 }

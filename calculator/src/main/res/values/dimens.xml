@@ -3,4 +3,8 @@
     <dimen name="number_size">46dp</dimen>
     <dimen name="margin_border">10sp</dimen>
     <dimen name="button_layout_width">50dp</dimen>
+    <dimen name="max_text_size">100sp</dimen>
+    <dimen name="min_text_size">10sp</dimen>
+    <dimen name="equals_button_corner_radius">20dp</dimen>
+    <dimen name="radius">1000dp</dimen>
 </resources>

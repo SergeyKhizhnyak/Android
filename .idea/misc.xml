@@ -4,9 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/basic_event_listeners/src/main/res/layout/activity_basic_event_listeners.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/calculator/src/main/res/drawable/button_pressed_background.xml" value="0.2985" />
+        <entry key="..\:/Android/calculator/src/main/res/drawable/button_states.xml" value="0.2985" />
+        <entry key="..\:/Android/calculator/src/main/res/drawable/equals_button_frame_pressed.xml" value="0.2985" />
+        <entry key="..\:/Android/calculator/src/main/res/drawable/equals_button_frame_presseed.xml" value="0.2985" />
+        <entry key="..\:/Android/calculator/src/main/res/drawable/equals_button_frame_unpressed.xml" value="0.2985" />
+        <entry key="..\:/Android/calculator/src/main/res/drawable/equals_button_states.xml" value="0.2985" />
         <entry key="..\:/Android/calculator/src/main/res/drawable/gradient_background.xml" value="0.2985" />
         <entry key="..\:/Android/calculator/src/main/res/drawable/sign_button_bacjground.xml" value="0.196" />
         <entry key="..\:/Android/calculator/src/main/res/drawable/sign_button_background.xml" value="0.196" />
+        <entry key="..\:/Android/calculator/src/main/res/layout-v26/activity_calculator_main.xml" value="0.358695652173913" />
         <entry key="..\:/Android/calculator/src/main/res/layout/activity_calculator_main.xml" value="0.358695652173913" />
         <entry key="..\:/Android/custom_listener/src/main/res/layout/activity_cusrom_listener.xml" value="0.358695652173913" />
         <entry key="..\:/Android/extended_work_with_actionbar/src/main/res/menu/main.xml" value="0.36666666666666664" />
