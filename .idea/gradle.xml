@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/calculator" />
+            <option value="$PROJECT_DIR$/tic_tac_toe_game" />
+            <option value="$PROJECT_DIR$/tic_toe_game" />
             <option value="$PROJECT_DIR$/views_and_layouts" />
             <option value="$PROJECT_DIR$/work_with_image_view" />
             <option value="$PROJECT_DIR$/work_with_inputviews" />
