@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/text_view_calculation_story_field"
+        style="@style/CalculationStory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_border"
+        android:layout_marginEnd="@dimen/margin_border"
+        android:layout_weight="3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_calculation_field"
+        style="@style/TextViewCustom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_border"
+        android:layout_marginEnd="@dimen/margin_border"
+        android:layout_weight="1"
+        android:hint="@string/button_label_zero"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/text_view_result_field"
+        style="@style/TextViewCustom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_border"
+        android:layout_marginEnd="@dimen/margin_border"
+        android:layout_weight="1"
+        android:hint="@string/result_field_hint"
+        android:maxLines="1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_clear_state1"
+            android:textColor="@color/orange"
+            app:layout_constraintBottom_toTopOf="@id/button_seven"
+            app:layout_constraintEnd_toStartOf="@id/button_delete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_delete"
+            android:textColor="@color/orange"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_clear"
+            app:layout_constraintEnd_toStartOf="@id/button_percent"
+            app:layout_constraintStart_toEndOf="@id/button_clear"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_percent"
+            android:textColor="@color/orange"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_clear"
+            app:layout_constraintEnd_toStartOf="@id/button_division"
+            app:layout_constraintStart_toEndOf="@id/button_delete"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_division"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_division"
+            android:textColor="@color/orange"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_percent"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_seven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_seven"
+            app:layout_constraintBottom_toTopOf="@id/button_four"
+            app:layout_constraintEnd_toStartOf="@id/button_eight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_clear"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_eight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_eight"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_seven"
+            app:layout_constraintEnd_toStartOf="@id/button_nine"
+            app:layout_constraintStart_toEndOf="@id/button_seven"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_nine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_nine"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_seven"
+            app:layout_constraintEnd_toStartOf="@id/button_multiplication"
+            app:layout_constraintStart_toEndOf="@id/button_eight"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_multiplication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_multiplication"
+            android:textColor="@color/orange"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_seven"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_nine"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_four"
+            app:layout_constraintBottom_toTopOf="@id/button_one"
+            app:layout_constraintEnd_toStartOf="@id/button_five"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_seven"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_five"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_four"
+            app:layout_constraintEnd_toStartOf="@id/button_six"
+            app:layout_constraintStart_toEndOf="@id/button_four"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_six"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_six"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_four"
+            app:layout_constraintEnd_toStartOf="@id/button_subtraction"
+            app:layout_constraintStart_toEndOf="@id/button_five"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_subtraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_subtraction"
+            android:textColor="@color/orange"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_four"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_six"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_one"
+            app:layout_constraintBottom_toTopOf="@id/button_dot"
+            app:layout_constraintEnd_toStartOf="@id/button_two"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_four"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_two"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_one"
+            app:layout_constraintEnd_toStartOf="@id/button_three"
+            app:layout_constraintStart_toEndOf="@id/button_one"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_three"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_one"
+            app:layout_constraintEnd_toStartOf="@id/button_addition"
+            app:layout_constraintStart_toEndOf="@id/button_two"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_addition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_addition"
+            android:textColor="@color/orange"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_three"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_dot"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_zero"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_one"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_zero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_states"
+            android:text="@string/button_label_zero"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_dot"
+            app:layout_constraintEnd_toStartOf="@id/button_equals"
+            app:layout_constraintStart_toEndOf="@id/button_dot"
+            tools:targetApi="26" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_equals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:autoSizeMinTextSize="@dimen/min_text_size"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/equals_button_states"
+            android:text="@string/button_label_equals"
+            android:textColor="@color/white"
+            app:layout_constraintBaseline_toBaselineOf="@id/button_dot"
+            app:layout_constraintEnd_toEndOf="@+id/button_addition"
+            app:layout_constraintStart_toStartOf="@+id/button_three"
+            tools:targetApi="26" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
