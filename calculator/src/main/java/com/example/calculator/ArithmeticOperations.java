@@ -1,6 +1,7 @@
 package com.example.calculator;
 
 public interface ArithmeticOperations {
+
     double addition(double left, double right);
 
     double subtraction(double left, double right);

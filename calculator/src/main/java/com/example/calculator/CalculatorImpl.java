@@ -1,19 +1,22 @@
 package com.example.calculator;
 
+import com.example.calculator.utils.StringBufferUtils;
+import com.example.calculator.utils.StringUtils;
+
 import java.util.List;
 
 public class CalculatorImpl implements Calculator {
 
     @Override
-    public String deleteButton(String str) {
-        StringBuffer calculation = new StringBuffer(str);
+    public String deleteButton(String expression) {
+        StringBuffer sbExpression = new StringBuffer(expression);
 
-        if (StringBufferUtils.isEmpty(calculation)) {
+        if (StringBufferUtils.isEmpty(sbExpression)) {
             return "";
         }
 
-        calculation.deleteCharAt(calculation.length() - 1);
-        return calculation.toString();
+        sbExpression.deleteCharAt(sbExpression.length() - 1);
+        return sbExpression.toString();
     }
 
     @Override
@@ -22,33 +25,33 @@ public class CalculatorImpl implements Calculator {
     }
 
     @Override
-    public String operandOrOperationButton(String btnName, String calculation) {
-        calculation = inputQualifier(calculation, btnName);
+    public String operandOrOperationButton(String btnName, String expression) {
+        expression = inputQualifier(expression, btnName);
 
-        if (calculation == null) {
+        if (expression == null) {
             return null;
         }
 
-        calculation += btnName;
-        return calculation;
+        expression += btnName;
+        return expression;
     }
 
     @Override
-    public String percentButton(String str) {
+    public String percentButton(String expression) {
         StringExpression stringExpression = new StringExpressionImpl();
-        List<String> expression = stringExpression.toList(str);
-        double lastElement = Double.parseDouble(expression.get(expression.size() - 1));
-        expression.remove(expression.size() - 1);
+        List<String> listExpression = stringExpression.toList(expression);
+        double lastElement = Double.parseDouble(listExpression.get(listExpression.size() - 1));
+        listExpression.remove(listExpression.size() - 1);
         ArithmeticOperations arithmeticOperations = new ArithmeticOperationsImpl();
         lastElement = arithmeticOperations.percent(lastElement);
-        expression.add(String.valueOf(lastElement));
-        str = stringExpression.toString(expression);
-        return str;
+        listExpression.add(String.valueOf(lastElement));
+        expression = stringExpression.toString(listExpression);
+        return expression;
     }
 
     @Override
     public String equalsButton(String expression) {
-        PostfixExpression postfixExpression = new PostfixExpression();
+        PostfixExpression postfixExpression = new PostfixExpressionImpl();
         List<String> listExpression = postfixExpression.convertToPostfixExpression(expression);
         double result;
 
@@ -61,8 +64,8 @@ public class CalculatorImpl implements Calculator {
         return String.valueOf(result);
     }
 
-    private String inputQualifier(String str, String btnName) {
-        if (str.isEmpty()) {
+    private String inputQualifier(String expression, String btnName) {
+        if (expression.isEmpty()) {
             if (btnName.equals("0")) {
                 return null;
             }
@@ -71,21 +74,21 @@ public class CalculatorImpl implements Calculator {
                 return "0";
             }
         } else {
-            char lastElement = str.charAt(str.length() - 1);
+            char lastElement = expression.charAt(expression.length() - 1);
 
             if (Character.isDigit(lastElement)) {
-                return str;
+                return expression;
             }
 
             if (btnName.equals(".")) {
-                return str + "0";
+                return expression + "0";
             }
 
             if (!StringUtils.isNumeric(btnName)) {
-                return deleteButton(str);
+                return deleteButton(expression);
             }
         }
 
-        return str;
+        return expression;
     }
 }

@@ -21,7 +21,6 @@ public class CalculatorMainActivity extends AppCompatActivity {
         resultField = findViewById(R.id.text_view_result_field);
         calculationStoryField = findViewById(R.id.text_view_calculation_story_field);
         calculationStoryField.setMovementMethod(new ScrollingMovementMethod());
-
         Button btnOne = findViewById(R.id.button_one);
         Button btnTwo = findViewById(R.id.button_two);
         Button btnThree = findViewById(R.id.button_three);
@@ -41,7 +40,6 @@ public class CalculatorMainActivity extends AppCompatActivity {
         Button btnDivision = findViewById(R.id.button_division);
         Button btnPercent = findViewById(R.id.button_percent);
         Button btnEquals = findViewById(R.id.button_equals);
-
         String btnNameOne = getResources().getString(R.string.button_label_one);
         String btnNameTwo = getResources().getString(R.string.button_label_two);
         String btnNameThree = getResources().getString(R.string.button_label_three);
@@ -57,7 +55,6 @@ public class CalculatorMainActivity extends AppCompatActivity {
         String btnNameSubtraction = getResources().getString(R.string.button_label_subtraction);
         String btnNameMultiplication = getResources().getString(R.string.button_label_multiplication);
         String btnNameDivision = getResources().getString(R.string.button_label_division);
-
         setOnOperandOrOperationButtonClick(btnOne, btnNameOne);
         setOnOperandOrOperationButtonClick(btnTwo, btnNameTwo);
         setOnOperandOrOperationButtonClick(btnThree, btnNameThree);
@@ -80,91 +77,92 @@ public class CalculatorMainActivity extends AppCompatActivity {
         float textSize = btnOne.getTextSize();
         calculationField.setTextSize(textSize);
         resultField.setTextSize(textSize);
+        calculationStoryField.setTextSize(textSize);
     }
 
     private void setOnDeleteButtonClick(Button btn) {
         btn.setOnClickListener(view -> {
-            String calculation = calculationField.getText().toString();
-            calculation = calculator.deleteButton(calculation);
-            calculationField.setText(calculation);
-            resultField.setText(calculateResult(calculation));
+            String expression = calculationField.getText().toString();
+            expression = calculator.deleteButton(expression);
+            calculationField.setText(expression);
+            resultField.setText(calculateResult(expression));
         });
     }
 
     private void setOnClearButtonClick(Button btn) {
         btn.setOnClickListener(view -> {
-            String calculation = calculator.clearButton();
-            calculationField.setText(calculation);
-            resultField.setText(calculation);
+            String expression = calculator.clearButton();
+            calculationField.setText(expression);
+            resultField.setText(expression);
         });
     }
 
     private void setOnOperandOrOperationButtonClick(Button btn, String btnName) {
         btn.setOnClickListener(view -> {
-            String calculation = calculationField.getText().toString();
-            calculation = calculator.operandOrOperationButton(btnName, calculation);
-            calculationField.setText(calculation);
-            resultField.setText(calculateResult(calculation));
+            String expression = calculationField.getText().toString();
+            expression = calculator.operandOrOperationButton(btnName, expression);
+            calculationField.setText(expression);
+            resultField.setText(calculateResult(expression));
         });
     }
 
     private void setOnPercentButtonClick(Button btn) {
         btn.setOnClickListener(view -> {
-            String calculation = calculationField.getText().toString();
+            String expression = calculationField.getText().toString();
 
-            if (calculation.isEmpty()) {
+            if (expression.isEmpty()) {
                 return;
             }
 
-            calculation = calculationQualifier(calculation);
-            calculation = calculator.percentButton(calculation);
-            calculationField.setText(calculation);
-            resultField.setText(calculateResult(calculation));
+            expression = expressionQualifier(expression);
+            expression = calculator.percentButton(expression);
+            calculationField.setText(expression);
+            resultField.setText(calculateResult(expression));
         });
     }
 
     private void setOnEqualsButtonClick(Button btn) {
         btn.setOnClickListener(view -> {
-            String str = calculationField.getText().toString();
-            str = calculationQualifier(str);
-            calculationStoryField.append(str + "\n");
-            str = resultField.getText().toString();
-            calculationField.setText(str);
+            String expression = calculationField.getText().toString();
+            expression = expressionQualifier(expression);
+            calculationStoryField.append(expression + "\n");
+            expression = resultField.getText().toString();
+            calculationStoryField.append("=" + expression + "\n");
+            calculationField.setText(expression);
         });
     }
 
 
     private String calculateResult(String expression) {
-        expression = calculationQualifier(expression);
+        expression = expressionQualifier(expression);
         String result = calculator.equalsButton(expression);
         return resultQualifier(result);
     }
 
 
-    private String calculationQualifier(String str) {
-        char lastElement = str.charAt(str.length() - 1);
+    private String expressionQualifier(String expression) {
+        char lastElement = expression.charAt(expression.length() - 1);
 
         if (!Character.isDigit(lastElement)) {
-            str = calculator.deleteButton(str);
+            expression = calculator.deleteButton(expression);
         }
 
-        return str;
+        return expression;
     }
 
-    private String resultQualifier(String str) {
-        Double value;
+    private String resultQualifier(String value) {
+        Double result;
 
         try {
-            value = Double.parseDouble(str);
+            result = Double.parseDouble(value);
         } catch (NumberFormatException exception) {
-            return str;
+            return value;
         }
 
-        if (value == Math.floor(value) && !Double.isInfinite(value)) {
-            int result = value.intValue();
-            return String.valueOf(result);
+        if (result == Math.floor(result) && !Double.isInfinite(result)) {
+            return String.valueOf(result.intValue());
         }
 
-        return String.valueOf(value);
+        return String.valueOf(result);
     }
 }

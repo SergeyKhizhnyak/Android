@@ -6,4 +6,9 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">@color/black</item>
     </style>
+
+    <style name="CalculationStory">
+        <item name="android:gravity">end|bottom</item>
+        <item name="android:textColor">@color/dim_gray</item>
+    </style>
 </resources>

@@ -1,14 +1,8 @@
-package com.example.calculator;
+package com.example.calculator.utils;
 
 public final class StringUtils {
 
     public StringUtils() {
-    }
-
-    public static String removeLastElement(String string) {
-        StringBuffer trimmedString = new StringBuffer(string);
-        trimmedString = trimmedString.deleteCharAt(string.length() - 1);
-        return trimmedString.toString();
     }
 
     public static boolean isNumeric(String str) {

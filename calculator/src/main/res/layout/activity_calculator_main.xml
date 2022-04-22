@@ -9,9 +9,9 @@
 
     <TextView
         android:id="@+id/text_view_calculation_story_field"
-        style="@style/TextViewCustom"
+        style="@style/CalculationStory"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_border"
         android:layout_marginEnd="@dimen/margin_border"
         android:layout_weight="3"
@@ -21,32 +21,28 @@
         android:id="@+id/text_view_calculation_field"
         style="@style/TextViewCustom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_border"
         android:layout_marginEnd="@dimen/margin_border"
         android:layout_weight="1"
         android:hint="@string/button_label_zero"
-        android:maxLines="1"
-        app:layout_constraintBottom_toTopOf="@id/text_view_result_field"
-        app:layout_constraintTop_toBottomOf="@id/text_view_calculation_story_field" />
+        android:maxLines="1" />
 
     <TextView
         android:id="@+id/text_view_result_field"
         style="@style/TextViewCustom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_border"
         android:layout_marginEnd="@dimen/margin_border"
         android:layout_weight="1"
         android:hint="@string/result_field_hint"
-        android:maxLines="1"
-        app:layout_constraintBottom_toTopOf="@id/keyboard"
-        app:layout_constraintTop_toBottomOf="@id/text_view_calculation_field" />
+        android:maxLines="1" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/keyboard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="5"
         app:layout_constraintBottom_toBottomOf="parent">
 
