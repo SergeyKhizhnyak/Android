@@ -3,7 +3,7 @@ ___
 
 # Overview
 
-Thhis project is a set of modules which represent the result of studing how to create Android apps use Android views and other elements.
+This project is a set of modules which represent the result of studying how to create Android apps use Android views and other elements.
 
 # Navigation
 
