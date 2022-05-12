@@ -23,7 +23,6 @@
             <option value="$PROJECT_DIR$/working_with_edittext" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

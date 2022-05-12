@@ -1,21 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/olive">
 
     <TextView
-        android:id="@+id/text_view_headline"
+        android:id="@+id/text_view_game_board_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/game_board_headline" />
+        android:layout_marginTop="@dimen/border_margin"
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"
+        android:text="@string/headline"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="o" />
+
+    <View
+        android:id="@+id/view_dotted_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/dotted_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_game_board_title"
+        app:layout_constraintWidth_percent="0.6" />
 
     <TextView
         android:id="@+id/text_view_game_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/game_score" />
+        android:text="@string/game_score"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_dotted_line" />
 
-</LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginStart="@dimen/border_margin"
+        android:layout_marginEnd="@dimen/border_margin"
+        app:layout_constraintBottom_toTopOf="@id/buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_game_score">
+
+        <View
+            android:id="@+id/left_line"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:background="@color/gold"
+            app:layout_constraintEnd_toStartOf="@id/image_top"
+            app:layout_constraintStart_toEndOf="@id/image_top_left"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/right_line"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:background="@color/gold"
+            app:layout_constraintEnd_toStartOf="@id/image_top_right"
+            app:layout_constraintStart_toEndOf="@id/image_top"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/top_line"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/gold"
+            app:layout_constraintBottom_toTopOf="@id/image_middle_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_top_left" />
+
+        <View
+            android:id="@+id/bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/gold"
+            app:layout_constraintBottom_toTopOf="@id/image_bottom_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_middle_left" />
+
+        <ImageView
+            android:id="@+id/image_top_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/top_left_image_description"
+            app:layout_constraintBottom_toTopOf="@id/top_line"
+            app:layout_constraintEnd_toStartOf="@id/left_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/top_image_description"
+            app:layout_constraintBottom_toTopOf="@id/top_line"
+            app:layout_constraintEnd_toStartOf="@id/right_line"
+            app:layout_constraintStart_toEndOf="@id/left_line"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_top_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/top_left_image_description"
+            app:layout_constraintBottom_toTopOf="@id/top_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/right_line"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_middle_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/middle_left_image_description"
+            app:layout_constraintBottom_toTopOf="@id/bottom_line"
+            app:layout_constraintEnd_toStartOf="@id/left_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_line" />
+
+        <ImageView
+            android:id="@+id/image_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/middle_image_description"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_line"
+            app:layout_constraintEnd_toStartOf="@id/right_line"
+            app:layout_constraintStart_toEndOf="@id/left_line"
+            app:layout_constraintTop_toBottomOf="@id/top_line" />
+
+        <ImageView
+            android:id="@+id/image_middle_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/middle_right_image_description"
+            app:layout_constraintBottom_toTopOf="@id/bottom_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/right_line"
+            app:layout_constraintTop_toBottomOf="@id/top_line" />
+
+        <ImageView
+            android:id="@+id/image_bottom_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/bottom_left_image_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/left_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottom_line" />
+
+        <ImageView
+            android:id="@+id/image_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/bottom_image_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/right_line"
+            app:layout_constraintStart_toEndOf="@id/left_line"
+            app:layout_constraintTop_toBottomOf="@+id/bottom_line" />
+
+        <ImageView
+            android:id="@+id/image_bottom_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/bottom_right_image_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/right_line"
+            app:layout_constraintTop_toBottomOf="@id/bottom_line" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/border_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.6">
+
+        <Button
+            android:id="@+id/button_new_game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:text="@string/new_game_button_label"
+            android:textColor="@drawable/text_color_selector"
+            app:layout_constraintBottom_toTopOf="@id/button_restart_game"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_restart_game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:text="@string/reset_game_button_label"
+            android:textColor="@drawable/text_color_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_new_game" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

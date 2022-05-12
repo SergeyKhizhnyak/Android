@@ -36,8 +36,15 @@
         <entry key="..\:/Android/gesture_and_touch_events/src/main/res/menu/drawer_menu.xml" value="0.18802083333333333" />
         <entry key="..\:/Android/gesture_and_touch_events/src/main/res/menu/main.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/snackbar/src/main/res/layout/activity_snackbar.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/button_pressed.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/button_states.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/button_unpressed.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/dotted_line.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/dottet_line.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/text_color.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/layout-v26/activity_game_board.xml" value="0.358695652173913" />
         <entry key="..\:/Android/tic_tac_toe_game/src/main/res/layout/activity_game_board.xml" value="0.358695652173913" />
-        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/layout/activity_menu.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/layout/activity_menu.xml" value="0.25" />
         <entry key="..\:/Android/toasts/src/main/res/layout/toast_layout.xml" value="0.358695652173913" />
         <entry key="..\:/Android/work_with_actionbar/src/main/res/layout/activity_work_with_actionbar.xml" value="0.358695652173913" />
         <entry key="..\:/Android/work_with_actionbar/src/main/res/menu/menu_main.xml" value="0.36666666666666664" />
