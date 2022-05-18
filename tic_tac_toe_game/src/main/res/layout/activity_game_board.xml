@@ -8,16 +8,16 @@
 
     <TextView
         android:id="@+id/text_view_game_board_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="@dimen/border_margin"
         android:autoSizeTextType="uniform"
+        android:gravity="center"
         android:maxLines="1"
         android:text="@string/headline"
         android:textColor="@color/white"
-        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="o" />
@@ -31,19 +31,50 @@
         app:layout_constraintHeight_percent="0.02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_game_board_title"
-        app:layout_constraintWidth_percent="0.6" />
+        app:layout_constraintWidth_percent="0.85" />
 
     <TextView
         android:id="@+id/text_view_game_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
+        android:autoSizeTextType="uniform"
         android:text="@string/game_score"
         android:textColor="@color/white"
-        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_dotted_line" />
+        app:layout_constraintTop_toBottomOf="@id/view_dotted_line"
+        app:layout_constraintWidth_percent="0.1"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/text_view_player_one"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/border_margin"
+        android:autoSizeTextType="uniform"
+        android:text="@string/player_one"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@id/text_view_game_score"
+        app:layout_constraintEnd_toStartOf="@id/text_view_game_score"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="0.1"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/text_view_player_two"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/border_margin"
+        android:autoSizeTextType="uniform"
+        android:text="@string/player_two"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@id/text_view_game_score"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toEndOf="@id/text_view_game_score"
+        app:layout_constraintWidth_percent="0.1"
+        tools:targetApi="o" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/grid"
@@ -53,6 +84,7 @@
         android:layout_marginStart="@dimen/border_margin"
         android:layout_marginEnd="@dimen/border_margin"
         app:layout_constraintBottom_toTopOf="@id/buttons"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_game_score">
