@@ -15,4 +15,6 @@
     <string name="bottom_left_image_description">bottom left game board part</string>
     <string name="bottom_image_description">bottom game board part</string>
     <string name="bottom_right_image_description">bottom right game board part</string>
+    <string name="player_one">P1</string>
+    <string name="player_two">P2</string>
 </resources>
