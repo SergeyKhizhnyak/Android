@@ -94,8 +94,8 @@
             android:layout_width="3dp"
             android:layout_height="match_parent"
             android:background="@color/gold"
-            app:layout_constraintEnd_toStartOf="@id/image_top"
-            app:layout_constraintStart_toEndOf="@id/image_top_left"
+            app:layout_constraintEnd_toStartOf="@id/right_line"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
@@ -103,8 +103,8 @@
             android:layout_width="3dp"
             android:layout_height="match_parent"
             android:background="@color/gold"
-            app:layout_constraintEnd_toStartOf="@id/image_top_right"
-            app:layout_constraintStart_toEndOf="@id/image_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/left_line"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
@@ -112,163 +112,30 @@
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:background="@color/gold"
-            app:layout_constraintBottom_toTopOf="@id/image_middle_left"
+            app:layout_constraintBottom_toTopOf="@id/bottom_line"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_top_left" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/bottom_line"
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:background="@color/gold"
-            app:layout_constraintBottom_toTopOf="@id/image_bottom_left"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_middle_left" />
-
-        <ImageView
-            android:id="@+id/image_top_left"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/grid_margin"
-            android:layout_marginTop="@dimen/grid_margin"
-            android:layout_marginEnd="@dimen/grid_margin"
-            android:layout_marginBottom="@dimen/grid_margin"
-            android:contentDescription="@string/top_left_image_description"
-            app:layout_constraintBottom_toTopOf="@id/top_line"
-            app:layout_constraintEnd_toStartOf="@id/left_line"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_weight="1" />
-
-        <ImageView
-            android:id="@+id/image_top"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/grid_margin"
-            android:layout_marginTop="@dimen/grid_margin"
-            android:layout_marginEnd="@dimen/grid_margin"
-            android:layout_marginBottom="@dimen/grid_margin"
-            android:contentDescription="@string/top_image_description"
-            app:layout_constraintBottom_toTopOf="@id/top_line"
-            app:layout_constraintEnd_toStartOf="@id/right_line"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/left_line"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_weight="1" />
-
-        <ImageView
-            android:id="@+id/image_top_right"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/grid_margin"
-            android:layout_marginTop="@dimen/grid_margin"
-            android:layout_marginEnd="@dimen/grid_margin"
-            android:layout_marginBottom="@dimen/grid_margin"
-            android:contentDescription="@string/top_left_image_description"
-            app:layout_constraintBottom_toTopOf="@id/top_line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/right_line"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_weight="1" />
-
-        <ImageView
-            android:id="@+id/image_middle_left"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/grid_margin"
-            android:layout_marginTop="@dimen/grid_margin"
-            android:layout_marginEnd="@dimen/grid_margin"
-            android:layout_marginBottom="@dimen/grid_margin"
-            android:contentDescription="@string/middle_left_image_description"
-            app:layout_constraintBottom_toTopOf="@id/bottom_line"
-            app:layout_constraintEnd_toStartOf="@id/left_line"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/top_line"
-            app:layout_constraintVertical_weight="1" />
-
-        <ImageView
-            android:id="@+id/image_middle"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/grid_margin"
-            android:layout_marginTop="@dimen/grid_margin"
-            android:layout_marginEnd="@dimen/grid_margin"
-            android:layout_marginBottom="@dimen/grid_margin"
-            android:contentDescription="@string/middle_image_description"
-            app:layout_constraintBottom_toTopOf="@+id/bottom_line"
-            app:layout_constraintEnd_toStartOf="@id/right_line"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/left_line"
-            app:layout_constraintTop_toBottomOf="@id/top_line"
-            app:layout_constraintVertical_weight="1" />
-
-        <ImageView
-            android:id="@+id/image_middle_right"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/grid_margin"
-            android:layout_marginTop="@dimen/grid_margin"
-            android:layout_marginEnd="@dimen/grid_margin"
-            android:layout_marginBottom="@dimen/grid_margin"
-            android:contentDescription="@string/middle_right_image_description"
-            app:layout_constraintBottom_toTopOf="@id/bottom_line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/right_line"
-            app:layout_constraintTop_toBottomOf="@id/top_line"
-            app:layout_constraintVertical_weight="1" />
-
-        <ImageView
-            android:id="@+id/image_bottom_left"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/grid_margin"
-            android:layout_marginTop="@dimen/grid_margin"
-            android:layout_marginEnd="@dimen/grid_margin"
-            android:layout_marginBottom="@dimen/grid_margin"
-            android:contentDescription="@string/bottom_left_image_description"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/left_line"
-            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bottom_line"
-            app:layout_constraintVertical_weight="1" />
-
-        <ImageView
-            android:id="@+id/image_bottom"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/grid_margin"
-            android:layout_marginTop="@dimen/grid_margin"
-            android:layout_marginEnd="@dimen/grid_margin"
-            android:layout_marginBottom="@dimen/grid_margin"
-            android:contentDescription="@string/bottom_image_description"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/right_line"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/left_line"
-            app:layout_constraintTop_toBottomOf="@+id/bottom_line"
-            app:layout_constraintVertical_weight="1" />
-
-        <ImageView
-            android:id="@+id/image_bottom_right"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/grid_margin"
-            android:layout_marginTop="@dimen/grid_margin"
-            android:layout_marginEnd="@dimen/grid_margin"
-            android:layout_marginBottom="@dimen/grid_margin"
-            android:contentDescription="@string/bottom_right_image_description"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/right_line"
-            app:layout_constraintTop_toBottomOf="@id/bottom_line"
-            app:layout_constraintVertical_weight="1" />
+            app:layout_constraintTop_toBottomOf="@id/top_line" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/game_board"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="@id/grid"
+        app:layout_constraintEnd_toEndOf="@id/grid"
+        app:layout_constraintStart_toStartOf="@id/grid"
+        app:layout_constraintTop_toTopOf="@id/grid" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/buttons"
