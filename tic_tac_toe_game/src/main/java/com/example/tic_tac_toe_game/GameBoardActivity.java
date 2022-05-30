@@ -3,41 +3,65 @@ package com.example.tic_tac_toe_game;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameBoardActivity extends AppCompatActivity {
-    private final Grid grid = new Grid();
-
-    private TicTacToeGame ticTacToeGame;
-    private Intent intent;
+    private Grid grid;
+    private TicTacToeGame game;
+    private LinearLayout gameBoard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
-        intent = new Intent(this, GameBoardActivity.class);
         Player playerOne = new Player(
-                findViewById(R.id.text_view_player_one),
-                getResources().getString(R.string.player_one));
+                getResources().getString(R.string.player_one),
+                findViewById(R.id.text_view_player_one_turn_order),
+                findViewById(R.id.text_view_player_one_count));
         Player playerTwo = new Player(
-                findViewById(R.id.text_view_player_two),
-                getResources().getString(R.string.player_two));
+                getResources().getString(R.string.player_two),
+                findViewById(R.id.text_view_player_two_turn_order),
+                findViewById(R.id.text_view_player_two_count));
         Determiner determiner = new Determiner(playerOne, playerTwo);
         determiner.sideDeterminer();
-        TextView gameScore = findViewById(R.id.text_view_game_score);
-        grid.makeGrid(
-                findViewById(R.id.game_board),
-                this,
-                playerOne,
-                playerTwo,
-                determiner,
-                gameScore);
-        ticTacToeGame = new TicTacToeGame(this, determiner, playerOne, playerTwo, gameScore);
+        grid = new Grid();
+        game = new TicTacToeGame(this, determiner, grid, playerOne, playerTwo);
+        gameBoard = findViewById(R.id.game_board);
+        createGameBoard();
         Button newGame = findViewById(R.id.button_new_game);
         Button resetGame = findViewById(R.id.button_reset_game);
-        newGame.setOnClickListener(view -> ticTacToeGame.newGame(grid));
-        resetGame.setOnClickListener(view -> ticTacToeGame.resetGame(intent));
+        newGame.setOnClickListener(view -> game.newGame());
+        Intent intent = new Intent(this, GameBoardActivity.class);
+        resetGame.setOnClickListener(view -> game.resetGame(intent));
+    }
+
+    private void createGameBoard() {
+        int length = grid.getGrid().length;
+
+        for (int y = 0; y < length; y++) {
+            LinearLayout row = new LinearLayout(this);
+            row.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    1));
+            row.setWeightSum(3);
+
+            for (int x = 0; x < length; x++) {
+                ImageView image = new ImageView(this);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        1);
+                image.setLayoutParams(params);
+                row.addView(image);
+                grid.setGridElement(x, y, image);
+                game.makeTurn(grid.getGrid(), image);
+            }
+
+            gameBoard.addView(row);
+        }
     }
 }
