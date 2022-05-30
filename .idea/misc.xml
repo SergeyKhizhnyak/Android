@@ -44,7 +44,11 @@
         <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/dotted_line.xml" value="0.2985" />
         <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/dottet_line.xml" value="0.2985" />
         <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/hollow_circle.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/horizontal_line.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/left_diagonal.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/right_diagonal.xml" value="0.2985" />
         <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/text_color.xml" value="0.2985" />
+        <entry key="..\:/Android/tic_tac_toe_game/src/main/res/drawable/vertical_line.xml" value="0.2985" />
         <entry key="..\:/Android/tic_tac_toe_game/src/main/res/layout-v26/activity_game_board.xml" value="0.358695652173913" />
         <entry key="..\:/Android/tic_tac_toe_game/src/main/res/layout-v26/activity_menu.xml" value="0.358695652173913" />
         <entry key="..\:/Android/tic_tac_toe_game/src/main/res/layout/activity_game_board.xml" value="0.358695652173913" />
